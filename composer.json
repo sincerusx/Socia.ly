@@ -57,6 +57,19 @@
 			"Illuminate\\Foundation\\ComposerScripts::postUpdate",
 			"php artisan ide-helper:generate",
 			"php artisan ide-helper:meta"
+		],
+		"update-ide-helper": [
+			"php artisan ide-helper:generate",
+			"php artisan ide-helper:models",
+			"php artisan ide-helper:meta"
+		],
+		"clean-cache":                  [
+			"php artisan cache:clear",
+			"php artisan view:clear"
+		],
+		"refresh": [
+			"composer clean-cache",
+			"composer update-ide-helper"
 		]
 	},
 	"config": {
