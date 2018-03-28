@@ -1,10 +1,9 @@
 <?php
-
 namespace PHPSTORM_META {
 
     /**
      * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-     * Generated on 2018-03-28 05:00:16.
+     * Generated on 2018-03-28 07:24:00.
      *
      * @author Barry vd. Heuvel <barryvdh@gmail.com>
      * @see    https://github.com/barryvdh/laravel-ide-helper
@@ -40,6 +39,8 @@ namespace PHPSTORM_META {
             'view'                                                     => \Illuminate\View\Factory::class,
             'view.finder'                                              => \Illuminate\View\FileViewFinder::class,
             'view.engine.resolver'                                     => \Illuminate\View\Engines\EngineResolver::class,
+            'Barryvdh\Debugbar\LaravelDebugbar'                        => \Barryvdh\Debugbar\LaravelDebugbar::class,
+            'command.debugbar.clear'                                   => \Barryvdh\Debugbar\Console\ClearCommand::class,
             'command.ide-helper.generate'                              => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
             'command.ide-helper.models'                                => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
             'command.ide-helper.meta'                                  => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -174,6 +175,8 @@ namespace PHPSTORM_META {
             'view'                                                     => \Illuminate\View\Factory::class,
             'view.finder'                                              => \Illuminate\View\FileViewFinder::class,
             'view.engine.resolver'                                     => \Illuminate\View\Engines\EngineResolver::class,
+            'Barryvdh\Debugbar\LaravelDebugbar'                        => \Barryvdh\Debugbar\LaravelDebugbar::class,
+            'command.debugbar.clear'                                   => \Barryvdh\Debugbar\Console\ClearCommand::class,
             'command.ide-helper.generate'                              => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
             'command.ide-helper.models'                                => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
             'command.ide-helper.meta'                                  => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -308,6 +311,8 @@ namespace PHPSTORM_META {
             'view'                                                     => \Illuminate\View\Factory::class,
             'view.finder'                                              => \Illuminate\View\FileViewFinder::class,
             'view.engine.resolver'                                     => \Illuminate\View\Engines\EngineResolver::class,
+            'Barryvdh\Debugbar\LaravelDebugbar'                        => \Barryvdh\Debugbar\LaravelDebugbar::class,
+            'command.debugbar.clear'                                   => \Barryvdh\Debugbar\Console\ClearCommand::class,
             'command.ide-helper.generate'                              => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
             'command.ide-helper.models'                                => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
             'command.ide-helper.meta'                                  => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -442,6 +447,8 @@ namespace PHPSTORM_META {
             'view'                                                     => \Illuminate\View\Factory::class,
             'view.finder'                                              => \Illuminate\View\FileViewFinder::class,
             'view.engine.resolver'                                     => \Illuminate\View\Engines\EngineResolver::class,
+            'Barryvdh\Debugbar\LaravelDebugbar'                        => \Barryvdh\Debugbar\LaravelDebugbar::class,
+            'command.debugbar.clear'                                   => \Barryvdh\Debugbar\Console\ClearCommand::class,
             'command.ide-helper.generate'                              => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
             'command.ide-helper.models'                                => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
             'command.ide-helper.meta'                                  => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -576,6 +583,8 @@ namespace PHPSTORM_META {
             'view'                                                     => \Illuminate\View\Factory::class,
             'view.finder'                                              => \Illuminate\View\FileViewFinder::class,
             'view.engine.resolver'                                     => \Illuminate\View\Engines\EngineResolver::class,
+            'Barryvdh\Debugbar\LaravelDebugbar'                        => \Barryvdh\Debugbar\LaravelDebugbar::class,
+            'command.debugbar.clear'                                   => \Barryvdh\Debugbar\Console\ClearCommand::class,
             'command.ide-helper.generate'                              => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
             'command.ide-helper.models'                                => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
             'command.ide-helper.meta'                                  => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -710,6 +719,8 @@ namespace PHPSTORM_META {
             'view'                                                     => \Illuminate\View\Factory::class,
             'view.finder'                                              => \Illuminate\View\FileViewFinder::class,
             'view.engine.resolver'                                     => \Illuminate\View\Engines\EngineResolver::class,
+            'Barryvdh\Debugbar\LaravelDebugbar'                        => \Barryvdh\Debugbar\LaravelDebugbar::class,
+            'command.debugbar.clear'                                   => \Barryvdh\Debugbar\Console\ClearCommand::class,
             'command.ide-helper.generate'                              => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
             'command.ide-helper.models'                                => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
             'command.ide-helper.meta'                                  => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
@@ -844,6 +855,8 @@ namespace PHPSTORM_META {
             'view'                                                     => \Illuminate\View\Factory::class,
             'view.finder'                                              => \Illuminate\View\FileViewFinder::class,
             'view.engine.resolver'                                     => \Illuminate\View\Engines\EngineResolver::class,
+            'Barryvdh\Debugbar\LaravelDebugbar'                        => \Barryvdh\Debugbar\LaravelDebugbar::class,
+            'command.debugbar.clear'                                   => \Barryvdh\Debugbar\Console\ClearCommand::class,
             'command.ide-helper.generate'                              => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
             'command.ide-helper.models'                                => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
             'command.ide-helper.meta'                                  => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
