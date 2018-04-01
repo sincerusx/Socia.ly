@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string( 'username', 50 )->comment( 'account username' );
             $table->string( 'password' )->comment( 'bcrypt hashed password' );
             $table->string( 'email', 100 )->unique()->comment( 'account email address' );
+            $table->string( 'mobile', 15 )->unique()->comment( 'users mobile number' );
             $table->tinyInteger( 'activated' )->default( 0 )->comment( 'status of account. 0: not activated, 1:activated' );
             $table->boolean( 'isReal' )->default( 1 )->comment( 'indicates test accounts. 0: test, 1: real' );
             $table->rememberToken();
