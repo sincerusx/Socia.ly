@@ -68,6 +68,7 @@
 			"php artisan view:clear"
 		],
 		"refresh": [
+			"composer dump-autoload",
 			"composer clean-cache",
 			"composer update-ide-helper"
 		]

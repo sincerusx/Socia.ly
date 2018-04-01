@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::any('/', 'HomeController@index')->name('home');
 
 // Authenticaation Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
