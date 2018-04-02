@@ -13,7 +13,7 @@
 
 Route::any('/', 'HomeController@index')->name('home');
 
-// Authenticaation Routes...
+// Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -27,3 +27,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+// Registration verification
+Route::get('register/verification/{token}', 'Auth\RegisterController@verify')->name('auth.verify');
+Route::get('register/verification/resend', 'Auth\RegisterController@resend')->name('auth.verify.resend');

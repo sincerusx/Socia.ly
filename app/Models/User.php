@@ -19,19 +19,31 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-            'username',
-            'email',
-            'password',
-    ];
+    protected $fillable = ['username', 'email', 'password', 'verified_email', 'verified_mobile',];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = [
-            'password',
-            'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token',];
+
+    public function verificationToken()
+    {
+        return $this->hasOne(VerificationToken::class, 'user_id', 'id');
+    }
+
+    public function hasVerifiedEmail()
+    {
+        if($this->verified_email == 1){
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function byEmail($email)
+    {
+        return self::where('email', $email);
+    }
 }

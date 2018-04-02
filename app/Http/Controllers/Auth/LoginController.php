@@ -97,7 +97,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Login validation rules
+     * Login validation rules.
      *
      * @return array
      */
@@ -110,7 +110,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Login validation messages associated with rules
+     * Login validation messages associated with rules.
      *
      * @return array
      */
