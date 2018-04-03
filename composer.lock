@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "21cff0b1c47533fa622a53ad07978d01",
+    "content-hash": "af5ba11a7427900ccc387f1b4395b43b",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -932,16 +932,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.13",
+            "version": "v5.6.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "90ccb77a543ff063533083f427d5e655546afbad"
+                "reference": "baa42cf6bdd942523fafece21ec16a1843c6db0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/90ccb77a543ff063533083f427d5e655546afbad",
-                "reference": "90ccb77a543ff063533083f427d5e655546afbad",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/baa42cf6bdd942523fafece21ec16a1843c6db0f",
+                "reference": "baa42cf6bdd942523fafece21ec16a1843c6db0f",
                 "shasum": ""
             },
             "require": {
@@ -1066,7 +1066,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-03-26T13:45:20+00:00"
+            "time": "2018-03-30T13:29:58+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1591,16 +1591,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.17",
+            "version": "v0.8.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec"
+                "reference": "5357b1cffc8fb375d6a9e3c86d5c82dd38a40834"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
-                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/5357b1cffc8fb375d6a9e3c86d5c82dd38a40834",
+                "reference": "5357b1cffc8fb375d6a9e3c86d5c82dd38a40834",
                 "shasum": ""
             },
             "require": {
@@ -1659,7 +1659,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-12-28T16:14:16+00:00"
+            "time": "2018-04-02T05:41:44+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -2758,74 +2758,6 @@
     ],
     "packages-dev": [
         {
-            "name": "barryvdh/laravel-debugbar",
-            "version": "v3.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "7a91480cc6e597caed5117a3c5d685f06d35c5a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/7a91480cc6e597caed5117a3c5d685f06d35c5a1",
-                "reference": "7a91480cc6e597caed5117a3c5d685f06d35c5a1",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/routing": "5.5.x|5.6.x",
-                "illuminate/session": "5.5.x|5.6.x",
-                "illuminate/support": "5.5.x|5.6.x",
-                "maximebf/debugbar": "~1.15.0",
-                "php": ">=7.0",
-                "symfony/debug": "^3|^4",
-                "symfony/finder": "^3|^4"
-            },
-            "require-dev": {
-                "illuminate/framework": "5.5.x"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Barryvdh\\Debugbar\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "Debugbar": "Barryvdh\\Debugbar\\Facade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Barryvdh\\Debugbar\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "PHP Debugbar integration for Laravel",
-            "keywords": [
-                "debug",
-                "debugbar",
-                "laravel",
-                "profiler",
-                "webprofiler"
-            ],
-            "time": "2018-03-06T08:35:31+00:00"
-        },
-        {
             "name": "doctrine/instantiator",
             "version": "1.1.0",
             "source": {
@@ -3037,67 +2969,6 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
-        },
-        {
-            "name": "maximebf/debugbar",
-            "version": "v1.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "30e7d60937ee5f1320975ca9bc7bcdd44d500f07"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/30e7d60937ee5f1320975ca9bc7bcdd44d500f07",
-                "reference": "30e7d60937ee5f1320975ca9bc7bcdd44d500f07",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/log": "^1.0",
-                "symfony/var-dumper": "^2.6|^3.0|^4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0|^5.0"
-            },
-            "suggest": {
-                "kriswallsmith/assetic": "The best way to manage assets",
-                "monolog/monolog": "Log using Monolog",
-                "predis/predis": "Redis storage"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.14-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "DebugBar\\": "src/DebugBar/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Bouroumeau-Fuseau",
-                    "email": "maxime.bouroumeau@gmail.com",
-                    "homepage": "http://maximebf.com"
-                },
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "Debug bar in the browser for php application",
-            "homepage": "https://github.com/maximebf/php-debugbar",
-            "keywords": [
-                "debug",
-                "debugbar"
-            ],
-            "time": "2017-12-15T11:13:46+00:00"
         },
         {
             "name": "mockery/mockery",

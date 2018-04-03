@@ -28,7 +28,13 @@
 			"database/factories"
 		],
 		"psr-4": {
-			"App\\": "app/"
+			"App\\": "app/",
+			"App\\Models\\": "app/Models/",
+			"App\\Contracts\\": "app/Contracts/",
+			"App\\Repositories\\": "app/Repositories/",
+			"App\\Repositories\\Contracts\\": "app/Repositories/Contracts/",
+			"App\\Repositories\\Database\\": "app/Repositories/Database/",
+			"App\\Repositories\\Eloquent\\": "app/Repositories/Eloquent/"
 		}
 	},
 	"autoload-dev": {
