@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use Response;
 
@@ -12,16 +13,16 @@ class UserController extends Controller
     /**
      * User Repository
      *
-     * @var \App\Repositories\Contracts\UserRepositoryInterface $User
+     * @var \App\Services\UserService $User
      */
     protected $User;
 
     /**
      * UserController constructor.
      *
-     * @param \App\Repositories\Contracts\UserRepositoryInterface $user
+     * @param \App\Services\UserService $user
      */
-    public function __construct(UserRepositoryInterface $user)
+    public function __construct(UserService $user)
     {
         $this->User = $user;
     }
@@ -33,7 +34,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return Response::json(['user' => $this->User->all()]);
+        return Response::json(['user' => $this->User->all(), $this->User->getMasterUser()]);
     }
 
 
@@ -52,11 +53,14 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param \Illuminate\Http\Request $request
+     * @param  int                     $id
+     *
+     * @return \App\Services\UserService|mixed
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        return $this->User->update($id);
+        return $this->User->update($request, $id);
     }
 
     /**
@@ -69,10 +73,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // update model and only pass in the fillable fields
-//        $this->User->update($request->only($this->User->getModel()->fillable), $id);
-
-        return $this->User->find($id);
+        return $this->User->update($request, $id);
     }
 
     /**

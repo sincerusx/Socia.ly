@@ -1,17 +1,20 @@
 <?php
-/**
- * Created by Liam Nelson.
- * Email: lmjnelson@yahoo.com
- */
 
 namespace App\Repositories\Eloquent;
 
-use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Models\User;
+use App\Repositories\Repository;
+use App\Repositories\Contracts\UserRepositoryInterface;
 
-class UserRepository implements UserRepositoryInterface
+/**
+ * Class UserRepository
+ * @package App\Repositories\Eloquent
+ */
+class UserRepository extends Repository implements UserRepositoryInterface
 {
     /**
+     * User Model.
+     *
      * @var \App\Models\User $model
      */
     protected $model;
@@ -23,8 +26,8 @@ class UserRepository implements UserRepositoryInterface
      */
     public function __construct(User $user)
     {
-//        parent::__construct($user);
-        $this->model = $user;
+        parent::__construct($user);
+//        $this->model = $user;
     }
 
     /**
@@ -83,4 +86,12 @@ class UserRepository implements UserRepositoryInterface
         return User::find($id)->update($data);
     }
 
+    /**
+     * Get User Model.
+     *
+     * @return \App\Models\User
+     */
+    public function getModel(){
+        return $this->model;
+    }
 }
