@@ -27,12 +27,16 @@ class UserService
         $this->User = $userRepository;
     }
 
-    public function getAll(){
-
+    public function getAll()
+    {
         return $this->User->all();
     }
 
-    public function all(){
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function all()
+    {
         return $this->User->all();
     }
 
@@ -52,13 +56,14 @@ class UserService
         $this->User = $User;
     }
 
-    public function getMasterUser(){
+    public function getMasterUser()
+    {
         return $this->getAll()->first();
     }
 
     /**
      * @param \Illuminate\Http\Request $request
-     * @param                       $id
+     * @param                          $id
      *
      * @return mixed|static
      */
@@ -70,11 +75,13 @@ class UserService
         return $this->User->find($id);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         return $this->User->delete($id);
     }
 
-    public function find($id){
+    public function find($id)
+    {
         return $this->User->find($id);
     }
 

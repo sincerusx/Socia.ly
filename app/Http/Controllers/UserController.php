@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Response;
@@ -34,9 +33,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return Response::json(['user' => $this->User->all(), $this->User->getMasterUser()]);
+        return Response::json(['master' => $this->User->getMasterUser(), 'users' => $this->User->all()]);
     }
-
 
     /**
      * Display the specified resource.
