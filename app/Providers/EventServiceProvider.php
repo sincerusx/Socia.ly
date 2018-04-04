@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
             'App\Events\UserHasRegistered' => [
                     'App\Listeners\SendWelcomeMail',
             ],
+            'App\Events\UserRequestedVerificationEmail' => [
+                    'App\Listeners\SendWelcomeMail',
+            ],
     ];
 
     /**

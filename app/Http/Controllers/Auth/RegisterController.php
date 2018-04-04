@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Events\UserHasRegistered;
+use App\Events\UserRequestedVerificationEmail;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\VerificationToken;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Exception;
-use HttpException;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Hash;
-use Log;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -44,7 +43,9 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except(['verify']);
+        $this->middleware('guest')->except(['verify', 'resend']);
+        $this->middleware('auth')->only(['verify']);
+        $this->middleware('verified.email')->only(['resend']);
     }
 
     /**
@@ -146,7 +147,10 @@ class RegisterController extends Controller
         $code = $token->token;
 
         if (null !== auth()->user() && auth()->user()->verified_email == 1) {
-            return redirect('/')->with('status', 'success')->with('message', 'Your email is already activated.');
+            Session::flush();
+            Session::flash('success', 'Your email address has already been verified');
+
+            return view('home');
         }
 
         $valid = VerificationToken::where('token', '=', $code)
@@ -154,7 +158,8 @@ class RegisterController extends Controller
                                        ->get();
 
         if ($valid->isEmpty()) {
-            return redirect('/')->with('status', 'wrong')->with('message', 'Token doesn\'t exist!');
+            Session::flush();
+            return redirect('/')->with('warning', 'Token doesn\'t exist!');
         }
 
         $token->user()->update(['verified_email' => 1]);
@@ -167,24 +172,28 @@ class RegisterController extends Controller
 
         Auth::login($token->user);
 
-        return redirect('/')->with('Email verification successful.');
+        return redirect('/')->with('success','Email verification successful.');
     }
 
-    /**
-     * @param Request $request
-     *
-     * @return \Illuminate\Http\RedirectResponse|Redirector
-     */
-    public function resend(Request $request)
-    {
-        $user = User::byEmail($request->email)->firstOrFail();
 
-        if($user->hasVerifiedEmail()) {
-            return redirect('/');
+    /**
+     * @param \App\Models\User $user
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function resend(User $user)
+    {
+
+        if(false === $user->hasVerifiedEmail()) {
+
+            event(new UserRequestedVerificationEmail($user));
+            Session::flash('verify', 'Verification email resent. Please check your inbox');
+
+            return view('home');
         }
 
-        event(new UserRequestedVerificationEmail($user));
+        Session::flush();
 
-        return redirect('/login')->with('Verification email resent. Please check your inbox');
+        return redirect('/')->with('success', 'You have already verified your email address with us.');
     }
 }

@@ -26,11 +26,11 @@ class SendWelcomeMail implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  UserHasRegistered $event
+     * @param  UserHasRegistered|UserRequestedVerificationEmail $event
      *
      * @return void
      */
-    public function handle(UserHasRegistered $event)
+    public function handle($event)
     {
         Mail::to($event->User->email)->send( new WelcomeMail($event->User));
     }

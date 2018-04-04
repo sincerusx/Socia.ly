@@ -16,7 +16,7 @@ Route::any('/', 'HomeController@index')->name('home');
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::any('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
@@ -29,5 +29,8 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 // Registration verification
-Route::get('register/verification/{token}', 'Auth\RegisterController@verify')->name('auth.verify');
-Route::get('register/verification/resend', 'Auth\RegisterController@resend')->name('auth.verify.resend');
+Route::get('verification/{token}', 'Auth\RegisterController@verify')->name('auth.verify');
+Route::get('resend/verification', 'Auth\RegisterController@resend')->name('auth.verify.resend');
+
+// User
+Route::resource('user', 'UserController');

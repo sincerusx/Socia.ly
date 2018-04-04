@@ -42,13 +42,15 @@ class WelcomeMail extends Mailable
                           'mime' => 'application/pdf',
                   ]);*/
 
+        $token = ($this->User->verificationToken['token']) ? $this->User->verificationToken['token'] : $this->User->verificationToken()->token;
+
         return $this->subject(self::SUBJECT)
                     ->from('do-not-respond@sociapp.com')
                     ->markdown('emails.auth.welcome')
                     ->with([
                             'username' => $this->User->username,
                             'email'    => $this->User->email,
-                            'token'    => $this->User->verificationToken['token'],
+                            'token'    => $token
                     ]);
 
     }

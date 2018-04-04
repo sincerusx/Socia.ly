@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('verified.email');
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -13,7 +18,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::guest()){
+        if(Auth::guest()) {
             return view('welcome');
         }
 

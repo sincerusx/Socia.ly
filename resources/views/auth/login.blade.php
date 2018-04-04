@@ -10,9 +10,10 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('Username') }}</label>
+                            <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('Username') }}</label>
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="email" value="{{ old('username') }}" required autofocus>
+                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? '
+                                is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
                                 @if ($errors->has('username'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('username') }}</strong>
@@ -61,9 +62,4 @@
         </div>
     </div>
 </div>
-    <pre>
-        @if($errors)
-            {{ print_r($errors) }}
-        @endif
-    </pre>
 @endsection

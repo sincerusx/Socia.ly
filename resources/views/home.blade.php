@@ -13,8 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if (session('verify'))
+                        <div class="alert alert-warning">
+                            {{ session('verify') }}
+                        </div>
+                    @endif
 
-                    You are logged in!
+                    Hello <strong>{{Auth::user()->username}}</strong>. You are logged in!
                 </div>
             </div>
         </div>
